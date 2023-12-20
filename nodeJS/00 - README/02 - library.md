@@ -64,3 +64,15 @@ debugger => mengikuti tahapan eksekusi progam di nodeJS
     - pause  : pause running code => menghentikan running code
 
     watch("namaVar");
+
+DNS => standar library yang digunakan untuk bekerja dengan DNS(domain name server)
+
+events => standar library yang digunakan untuk implementasi event listener
+    didalam event, terdapat sebuah class bernama EventEmitter yang bisa digunakan untuk
+        menampung data listener per jenis event
+    lalu kita bisa melakukan emmit untuk mentrigger jenis event dan mengirim data ke event tersebut
+
+globals => library berupa variable atau function yang secara global bisa diakses
+    tanpa harus melakukan import
+
+    contoh: require(), setTimeOut(), dll

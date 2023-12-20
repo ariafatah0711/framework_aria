@@ -12,7 +12,7 @@ fs.writeFileSync("temp.txt", "hello world");
 import fs from "fs/promises";
 
 // read
-const buffer = await fs.readFile("07 - file-system.mjs");
+const buffer = await fs.readFile("03 - file-system.mjs");
 console.info(buffer.toString());
 
 // write file
