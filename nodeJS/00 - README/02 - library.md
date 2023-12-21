@@ -76,3 +76,31 @@ globals => library berupa variable atau function yang secara global bisa diakses
     tanpa harus melakukan import
 
     contoh: require(), setTimeOut(), dll
+
+process => standar library yang berupa variable digunakan untuk mendapatkan informasi 
+    dari process nodeJS yang sedang berjalan
+
+    process juga merupakan instance dari EventEmmiter sehingga kita bisamenambahkan listener ke dalam process
+
+readline => standar library yang digunakan untuk membaca input
+
+report => merupakan fitur yang terdapat di nodeJS untuk membuat laporan secara otomatis 
+    dalam file ketika sesuatu terjadi pada aplikasi nodeJS kita
+
+buffer => merupakan object yang berisi urutan byte dengan panjang tetap
+    buffer merupakan turunan dari data Uint8array
+
+    buffer Encoding => digunakan untuk melakukan encoding dari satu encoding ke encoding yang lainya
+        misal utf8, ascii, hex, dll
+
+stream => standar library untuk aliran data di nodeJS
+    stream bisa jadi object yang dibaca, atau bisa di tulis, stream juga adalah turunan dati EventEmmiter
+
+time => standat library yang digunakan untuk melakukan scheduling
+    function timer terdapat globals
+
+    jika kita ingin menggunakan time versi promise kita bisa mengimport dari module timer/promise
+
+net => standar library yang digunakan untuk membuat network client dan server berbasis TCP
+    net server dan client merupakan object stream seshingga kita bisa baca datanya, tulis datanya, dan juga menambahkan listener
+
