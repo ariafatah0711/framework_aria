@@ -104,3 +104,8 @@ time => standat library yang digunakan untuk melakukan scheduling
 net => standar library yang digunakan untuk membuat network client dan server berbasis TCP
     net server dan client merupakan object stream seshingga kita bisa baca datanya, tulis datanya, dan juga menambahkan listener
 
+url => standar library yang digunakan untuk bekerja url
+
+util => standar library yang digunakan untuk utility utility yang bisa kita gunakan untuk mempermudah pembuatan kode progam di nodeJS
+
+Zlib => standar library yang digunakan untuk melakukan kompresi
