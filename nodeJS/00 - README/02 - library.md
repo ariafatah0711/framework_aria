@@ -108,4 +108,21 @@ url => standar library yang digunakan untuk bekerja url
 
 util => standar library yang digunakan untuk utility utility yang bisa kita gunakan untuk mempermudah pembuatan kode progam di nodeJS
 
-Zlib => standar library yang digunakan untuk melakukan kompresi
+Zlib => standar library yang digunakan untuk melakukan kompresi menggunakan Gzip
+
+console => standar library yang digunakan untuk melakukan print text 
+    console melakukan print ke stdout
+    dan console bisa kita gunakan tanpa melakukan import
+
+worker thread => standar library yang digunakan untuk menggunakan thread ketika mengeksekusi javasript secara pararrel
+    whorker thread sangat cocok ketika kita membuat kode progam yang berjalan parrarel
+        digunakan untuk kode yang insentive sprt: enkripsi / kompresi
+    cara kerja nya mirip web worker di javascript web API
+
+HTTP client => standar library untuk HTTP, dimana kita bisa melakukan simulasi HTTP request
+    bisa menggunakan simulasi HTTP atau HTTPS
+
+HTTP server => standar library untuk HTTP server, dimana kita bisa membuat HTTP server
+    untuk kasus sederhana, cocok sekali jika ingin membuat http server menggunakan standar library nodeJS
+    
+    namun untuk kasus kompleks, di rekomendasikan menggunakan framework yang lebih mudah penggunaanya
