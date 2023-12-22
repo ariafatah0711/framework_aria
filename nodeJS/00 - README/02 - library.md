@@ -126,3 +126,13 @@ HTTP server => standar library untuk HTTP server, dimana kita bisa membuat HTTP 
     untuk kasus sederhana, cocok sekali jika ingin membuat http server menggunakan standar library nodeJS
     
     namun untuk kasus kompleks, di rekomendasikan menggunakan framework yang lebih mudah penggunaanya
+
+cluster => standar library yang digunakan untuk menjalankan beberapa process nodeJS secara singkat
+    secara default nodeJS berjalan di single thread kecuali jika kita membuat thread manual
+        yaitu worker thread, tapi dalam satu process
+
+    contoh: melakukan banyak node sekaligus
+
+    cluster primary dan worker
+        primary => digunakan sebagai kordinator atau manajer untuk pre Worker
+        worker => aplikasi yang menjalankan tugas
