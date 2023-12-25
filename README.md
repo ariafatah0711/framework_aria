@@ -28,7 +28,27 @@ In the context of web development, I have studied frameworks. This file encompas
 <details id="back">
   <summary><b>JQuery</b></summary>
   
-  - jquery => merupakan
+  1. **introduction**
+    - jQuery is a fast, lightweight, JavaScript library designed to simplify HTML manipulation, animation, event handling, and document interaction in JavaScript.
+  2. **Install JQuery with CDN**
+    - One of the easiest ways to install jQuery is by using a CDN. Add the following script in the <head> of your HTML:
+      ``` <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> ```
+  2. **Install JQuery with Local Storage**
+    - Download jQuery from the official website.
+    - Copy the jQuery file (usually named jquery-x.x.x.min.js) to your project folder.
+    - Add the following script in the <head> of your HTML:
+      ```<script src="path/to/jquery-x.x.x.min.js"></script>```
+  2. **Install JQuery with NPM or YARN**
+    - If you are using Node.js and npm or Yarn as your package manager, you can install jQuery through the terminal:
+      ```
+      # Using npm
+      npm install jquery
+
+      # Using Yarn
+      yarn add jquery
+      ```
+    - After installation, you can import jQuery in your JavaScript file:
+      ```import $ from 'jquery';```
 </details>
 
 <p id="download"></p>
