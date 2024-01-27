@@ -1,0 +1,25 @@
+{
+  "name": "01---project",
+  "version": "1.0.0",
+  "description": "belajar node js npm",
+  "exports": {
+    ".": "./index.js",
+    "./write": "./write.js"
+  },
+  "type": "module",
+  "homepage": "https://s,id/arialink",
+  "scripts": {
+    "prestart": "echo 'before application start'",
+    "start": "node index.js",
+    "poststart": "echo 'after application start'",
+    "run": "node index.js && echo 'running node index.js'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "ariafatah0711",
+    "npm"
+  ],
+  "author": "ariafatah0711",
+  "license": "MIT"
+}

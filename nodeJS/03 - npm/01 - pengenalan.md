@@ -1,64 +1,82 @@
-npm => node packet manager
+npm (node package manager) => melakukan management project node js
+    project => adalah directory atau folder yang berisikan kode progam dan dependency(library) yang kita butuhkan
+    - dependency management project nodejs
+    - digunakan untuk donwoald dependency
 
-npm -v / npm --version => checking version
-npm help => list command npm
-npm <command> -h => checking help command 
+file package .json
+    npm menyimpan konfigurasi project pada file package.json
+    - kita bisa meenambahkan secara manual atau secara otomatis menggunakan nauto generate menggunakan progam npm
 
-npm install <package-name> => install package
-    // bisa juga pake as (add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall)
+nodejs dependency repository
+    kita dapat mencari library di web npm
 
-------------------------------------------------------------------------------------------------
+menginstall npm
+    - saat kita menginstall nodejs, secara otomatis npm akan terinstall secara otomatis
+    - untuk mengecek versi npm kita dapat menggunakan npm --version
 
-npm init => Membuat berkas package.json pada proyek
-    [--force|-f|--yes|-y|--scope]
+membuat projet
+    - buat folder untuk project
+    - masuk ke folder melalui terminal
+    - buat project npm menggunakan: npm init
 
-npm Install <package-name> => Memasang dan mendaftarkan package pada berkas package.json
-    [-P|--save-prod|-D|--save-dev|-O|--save-optional] [-E|--save-exact] [-B|--save-bundle] [--no-save] [--dry-run]
+project configuration
+    - inti dari konfigurasi project nodejs adalah package json
+        name => nama project
+        version => version project
+        description  => deskripsi project
+        homepage => home page project
+        author > author project
+        contributords => nama kontribusi
+        main => entry point package
+        keyword => keyworad project
+        license => lincese project
+        repository => repository project
 
-npm run <command> => Menjalankan perintah yang terdapat pada objek scripts yang terdapat di berkas package.json.
-    [--silent] [-- <args>...]
+menjalankan project yang sudah dibuat
+    node file_script
+    - namun yang berbeda itu akan mengecek dulu packagenya
 
-npm uninstall <package-name> => Menghapus dan mengeluarkan package dari berkas package.json.
-    [-S|--save|-D|--save-dev|-O|--save-optional|--no-save]
+project type => seacra default node js menggunakan commonjs
+    oleh karean itu ketika kita ingin menggunakan js modules kita harus membuaat file menjadi filemjs
 
--------------------------------------------------------------------------------------------------
-object package =>
-    1. 0bjek dependencies => merupakan objek yang menampung package yang kita gunakan untuk membuat aplikasi.
-        Biasanya package yang didaftarkan pada dependencies merupakan sebuah framework seperti React, Angular, Vue, jQuery atau framework lainnya
-        npm install <package-name> 
+    namun kita bisa menggunakan default project type dari common.js menjadi module.js
+    ubah type: module pada package.json
 
-    2. objek devDependecies => digunakan untuk mendaftarkan package yang digunakan hanya selama pengembangan saja.
-        Contohnya package yang berfungsi sebagai web server lokal seperti http-server, atau package yang berfungsi untuk membundel JavaScript seperti webpack.
+script => menyediakan script yang dimana kita bisa menyediakan perintah script 
+    yang nanti bisa digunakan untuk menjalankan perintah lainya
 
-        npm install <package-name> --save-dev
+    penggunakan script ini mirip seperti alias
+    untuk menambahkan ini kita tambahkan scripts: pada file package.json
 
-        Jadi jika kita ingin memasang package http-server sebagai devDependencies, kita bisa menuliskan perintah berikut:
+    untuk menjalankan kita gunakan
+    npm run-script <nama_script>
+    atau
+    npm run <nama_sript>
 
-        npm install http-server --save-dev
+spesial script => special script atau khusus yang dapat langsung di run
+    - start
+    - stop
+    - test
+    - restart
+    - uninstall
+    - version
 
-        "dependencies": {
-            "jquery": "^3.4.1",
-            "moment": "^2.24.0"
-        },
-        "devDependencies": {
-            "http-server": "^0.12.1"
-        }
+    selain itu terdapat script spesial untuk script di atas
+        prefix pre => script yang akan dijlankan sebelumnya
+        previx post => script yang akan dijlankan setelahnya
 
--------------------------------------------------------------------------------------------------
-kode ini akan jalan ketika
-    kita melakukan perintah npm run test
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "http-server ." // ini untuk menjalankan local server
+    misal ketika kita gunakan perintah npm start, maka akan menjalankan sript prestart, start, dan poststart
+
+export module
+    main => attribut main adalah entry point yang akan di load ketika kita meload nodejs project/package
+        pada kasus kita membuat aplikasi, mungkiin tidak terlalu berguna, tapi pada kasus ketika kita membuat library
+        yang akan digunakan di banyak project, baru attribut main ini akan terlihat kegunaanya
+
+    problemnya ketika menggunakan attribut main adalah, kita cuma bisa mengekspos satu file js.
+        yang menarik dari export ini kita tidak perlu menambahkan nama file js aslinya
+
+    tambahkan "exports": {
+        ".": "01 - project",
+        "./write": "./write.js"
     },
 
---------------------------------------------------------------------------------------------------
-pacakge pada cakupan global =>
-    memasang package pada cakupan global tidak akan menambahkan apapun pada berkas package.json proyek lokal
-
-    Pada Windows, lokasi default dari global modules adalah C -> Program Files -> nodejs -> node_modules
-
-    npm list -g
-
-    C:\Users\ariaf\AppData\Roaming\npm
-    └── http-server@14.1.1
