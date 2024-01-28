@@ -132,3 +132,66 @@ depedency version
         npm update
 
 development dependency
+    production => depedency yang dibutukan ketika aplikasi berjalan
+    development => depedency yang dibutuhkan khusus ketika proses development saja
+        contoh: unit testing
+
+    untuk menambahkan developement dependency kita tambahkan di bagian 
+        devDepedency di package.json
+    atau kiata gunakan perintah
+        npm install <naam_package> --save-dev
+
+    untuk donwoald depedency, sama kita gunakan
+        npm install
+
+        contoh:
+          "devDependencies": {
+                "moment": "2.30.1"
+            }
+
+    install depedency tanpa development (recomended)
+        npm install --poroduction #hanya menginstall production saja
+    
+membuat library
+    buat package dulu
+
+publish package
+    login ke npmjs.com
+    lalu login juga di npm terminal dengan perintah
+        npm adduser
+
+    publish dengan perintah
+        npm publish
+
+        namun nama package nya harus berbeda karena nanti akan di publish secara global
+
+install package yang sudah dibuat
+    caranya sama hanya tinggal ganti nama package pada depedency
+        nanti di node_modules akan tampil file yang sudah ada di package tadi
+
+cara gunakan package nya
+    import {nama_function} from "nama_package"
+
+ignore file saat ingin publish ke npmjs
+    .npmignore => untuk npm
+    .gitignore => untuk git
+
+    cara kerjanya adalah
+        npm akan membaca file .npmignore dulu jika tidak ada maka akan membaca di .gitignore
+    
+    jangan lupa tambahkan
+        "exports": {
+            ".": "./index.js",
+            "./number": "./number.js"
+        }
+    
+publish ulang
+    - pastikan versinya diubah
+
+update depedency
+    ubah versi depedency yang kita masukan
+        atau kita bisa gunakan version ~ atau ^
+        dan gunakan perintah 
+            npm update
+            npm update <nama_depedency>
+    

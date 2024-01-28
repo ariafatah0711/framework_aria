@@ -23,6 +23,10 @@
     "./write": "./write.js"
   },
   "dependencies": {
-    "lodash": "^4.17.19"
+    "lodash": "^4.17.19",
+    "02---library": "^1.0.0"
+  },
+  "devDependencies": {
+    "moment": "^2.30.1"
   }
 }

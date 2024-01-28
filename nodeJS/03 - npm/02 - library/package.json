@@ -1,0 +1,16 @@
+{
+  "name": "02---library",
+  "version": "1.1.0",
+  "description": "belajar npm library",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ariafatah0711",
+  "license": "MIT",
+  "exports": {
+    ".": "./index.js",
+    "./number": "./number.js"
+  }
+}
