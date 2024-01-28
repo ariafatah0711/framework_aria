@@ -80,3 +80,55 @@ export module
         "./write": "./write.js"
     },
 
+dependency manager => install library/package secara otomatis
+    kita bisa mencari open source package ataau membuat source package disana jika kita mau
+    untuk menginstall dependency, kita bisa gunakan
+        npm install <nama_dependency@version>
+        atau
+        npm i <nama_dependency@version>
+
+    atau bisa langsungtulis di dependencies di package json
+
+    jika ingin langsung install yang sudah di depencies di package json kita bisa gunakan
+    npm install
+
+    lalu akan muncul file 
+        - node_modules => berisi package / library yang dibutuhkan
+        - file package-lock json => berisi konfigurasi dependency dan versi package package
+
+menggunakan dependency
+    import _ from "lodash";
+
+depedency version
+    node js merekomendasikan menggunakan sinematik version
+    MAJOR, MINOR, PATCH
+        major => versi compitable misal dari 1 jadi 2 biasanya ini break
+        minor => menambahkan fitur baru namun tidak break fitur sebelumnya
+        patch => bug fix atau memperbaiki bug namun tidak menambahkan fitur baru
+
+    contoh lodash
+        versi 4.17.21 major.minor.patch
+
+    kegunaan nya kita dapat menentukan versi package yang ingin kita gunakan secara dinamis
+
+    menentukan versi dependency secara otomatis
+        x => (not recomended) donwoald versi terbaru meskipun major berubah 
+        1.x => donwoald minnor terbaru tanpa merubah major
+        1.10.x => donwoald patch terbaru tanpa merubah major dan minor
+        1.10.20 => versi tetap dan tidak akan ada perubahan
+
+    atau kita gunakan
+        ~1.1.1 => donwoald versi 1.1.1 jika ada update lakukan update jika patch berubah
+            mirip seperti 1.1.x
+        ^1.1.1 => donwoald versi 1.1.1 jika ada update, lakukan update namun hanya update minor dan patch berubah
+            mirip seperti 1.x
+
+    jika ingin coba kita bisa pergi ke npm version calculator
+
+    saat kita install dependecy di tereminal dia akan menginstall versi yang terbaru dan ada ^
+        lodash: "^4.17.21"
+
+    jika ingin update package kita gunakan 
+        npm update
+
+development dependency
