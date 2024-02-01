@@ -151,3 +151,11 @@ pengaturan konfigurasi
     bisa baca di https://jestjs.io/docs/configuration
 
     saya mau coba "verbose": true
+
+jest cli => perintah tamabahan untuk jest
+    npx jest --help / jest --help
+    npx jest --runTestsBypath test/sum.test.js => npx spesifik
+        npx jest --runTestsByPath .\test\sum.test.js
+    npx -t nama_test => test lebih spesifik
+        npx jest --testNamePattern "test sum function 3: sum(1, 2) must be 3"
+        npx jest --testNamePattern "test sum function 3"
