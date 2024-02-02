@@ -87,4 +87,47 @@ one-time setup function => kode yang hanya di eksekusi sekali saja dalam sebuah 
 async setup function
     cukup tambahkan di dalam functionya saja
 
-scoping => 
+scoping => membuat group unit test menggunakan function describe
+    hanya digunakan untuk unit test di dalam describe() tersebut
+    namun setup function diluar describe() secara otomatis juga digunakan di dalam describe
+
+nested scoping => membuat scoping di dalam describe()
+
+code coverage => melihat kode mana yang sudah tercakupi dengan unit test
+    dan bagian mana yang belum
+
+    praktek ini merupakan salah satu best practice dengan menentukan jumlah persentase kode yang 
+        harus tercukupi oleh unit test, misal 80%
+
+    jika ingin menyalakanya kita harus ubah konfigurasinya di file package.json
+        "collectCoverage": true
+
+    --------------|---------|----------|---------|---------|-------------------
+    File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+    --------------|---------|----------|---------|---------|-------------------
+    All files     |   91.66 |       75 |     100 |   91.66 |                   
+    async.js      |     100 |      100 |     100 |     100 |                   
+    exception.js  |      75 |       50 |     100 |      75 | 7                 
+    sum.js        |     100 |      100 |     100 |     100 |                   
+    --------------|---------|----------|---------|---------|-------------------
+
+    dan dia akan otomatis akan muncul folder coverage yang berupa file html
+
+coverage threshold => menentukan presentase code coverage
+    jika dibawah angka presentasenya akan gagal unit testnya 
+
+    branches => alur progam ex: if else
+    functions => function ex: funct
+    lines => baris
+    statements => statement ex: operator
+
+collect coverage => menentukan bagian kode yang mana yang ingin dihitung kode coveragenya
+    atribut collectCoverageFrom
+
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "**/vendor/**"
+    ]
+
+    jadi nanti folder vendor akan di baca juga

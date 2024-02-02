@@ -7,3 +7,7 @@ test("exception", () => {
   expect(() => callMe("aria")).toThrow(Myexception);
   expect(() => callMe("aria")).toThrow("Ups My  Exception happens");
 });
+
+test("exception not happens", () => {
+  expect(callMe("budi")).toBe("OK");
+});
