@@ -46,3 +46,45 @@ exceptions matchers => berharap sebuah exceptions (kebalikan dari expection)
     .toThrow(exception) => memastikan terjadi exception sesuai dengan excepted exception
     .toThrow(message) => memastikan terjadi exception sesuai dengan string yang dikirim disini
 
+not matchers => mengecekan kebalikan dari kesamaan
+    misal tidak sama dengan, tidak lebih dari, tidak contains, dll
+    jest memiliki fitur "not" di matchers nya dengan menggunakan property not di matcher
+
+test async code => pengetesan terhadap kode yang sifatnya async
+    namun saat kita melakukan pengetesan kode async, kita harus memberitahu ke jest.
+        agar hal ini jest tahu dan bisa menunggu kode async nya, sebelum menjalankan ke unit test selanjutnya
+    caranya kita menggunakan asynch code di closure  function jest
+
+    regenerator runtime error => error terjadi di babel
+        hal ini secara default babel tidak melakukan fitur untuk melakukan kompilasi runtime
+        ketika menemukan fitur regenerator atau async function
+
+        kita bisa tambahkan plugins depedency
+            npm install @babel/plugin-transform-runtime
+        selanjutnya tambahkan di babel.config.js
+
+async matchers => fitur matcher terhadap data async atau promise
+    hal ini mempermudah kita ingin melakukan matchers, sehingga tidak perlu melakukan await pada async functionya
+    semua async matchers mengembalikan promise
+
+    expect(promise).resolves => ekseptasi bahwa promise sukses, dan selanjutnya kita bisa gunakan matchers dan function lainya
+    expect(promise).rejects => expetasi bahwa promise gagal, selanjutnya kita bisa gunakan matcher function lainya
+
+setup function => fitur / kode yang akan selalu di eksekusi 
+    sebelum unit test dijalankan / setelah unit test dijalankan
+
+    beforeEach(function) => function akan di eksekusi sebelum unit test berjalan
+    afterEach(function) => function akan di eksekusi setalh unit test selesai
+
+    dan dia akan di panggil sebanyak file unit test
+
+one-time setup function => kode yang hanya di eksekusi sekali saja dalam sebuah file unit test
+    contoh: ketika kita connect ke database, dan setelah selesai
+
+    beforeAll(function) => di eksekusi sekali sebelum semua unit test berjalan di file unit test
+    afterAll(function) => di eksekusi sekali setelah semua unit test selesai di file unitt test
+
+async setup function
+    cukup tambahkan di dalam functionya saja
+
+scoping => 
