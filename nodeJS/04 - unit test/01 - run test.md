@@ -131,3 +131,36 @@ collect coverage => menentukan bagian kode yang mana yang ingin dihitung kode co
     ]
 
     jadi nanti folder vendor akan di baca juga
+
+it function => alias untuk function test()
+    it()
+        it dibuat agar mirip seperti cerita saat kita membuat progam
+
+skip function => mengignore sebuah unit test
+    saat kita menggunakan skip function nanti unit test nya akan di skip dan tidak dijalankan
+    test.skip("", () => {})
+    it.skip("", () => {})
+
+only function => memastikan hanya only function yang nanati akan di test
+    atau hanya memaksa unit test only yang akan di eksekusi
+
+    test.only("", () => {})
+    it.only("", () => {})
+
+duplicate unit test => unit test duplicate yang sebenernya sama hanya beda paamater / datanya
+
+each function => memungkinkan data dalam bentuk array yang akan di iterasi ke dalam kode unit test yang sama
+    test.each(table)("string", (numbers, expect) => {})
+
+    %s String, %d Number, %i Integer, %f floating, %j Json, %o Object
+
+    const table = [
+        [[10, 10, 10], 30],
+        [[10, 10, 10, 10, 10], 50],
+        [[10, 10, 10, 10, 10, 10, 10], 70],
+    ];
+
+    test.each(table)("test sumAll(%s) should result %i", (numbers, expected) => {
+        expect(sumAll(numbers)).toBe(expected);
+    });
+
