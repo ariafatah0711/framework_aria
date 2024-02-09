@@ -164,3 +164,16 @@ each function => memungkinkan data dalam bentuk array yang akan di iterasi ke da
         expect(sumAll(numbers)).toBe(expected);
     });
 
+object sebagai data => each function menggunakan data object
+    namun kita perlu melakukan destructing
+
+    const table = [
+        { numbers: [10, 10, 10], expected: 30 },
+        { numbers: [10, 10, 10, 10, 10], expected: 50 },
+        { numbers: [10, 10, 10, 10, 10, 10, 10], expected: 70 },
+    ];
+
+    test.each(table)("test sumAll(%numbers) should result (%expected)", ({ numbers, expected }) => {
+        expect(sumAll(numbers)).toBe(expected);
+    });
+
