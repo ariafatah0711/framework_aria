@@ -177,3 +177,75 @@ object sebagai data => each function menggunakan data object
         expect(sumAll(numbers)).toBe(expected);
     });
 
+concurrent test => secara default semua unit test akan dijalankan secara sequential 
+    dan unit test selanjutnya akan dijalankan ketika unit test sebelummya sudah selesai
+
+    atau berjalan asynchronus
+
+    test.concurent("nama test", () => )
+
+membatasi concurrent => membatasi berapa banyak concurrent test yang berjalan di configurasi jestnya
+    defaultnya 5
+
+    ubah di package json
+        "maxConcurrency": 3,
+
+todo function => gunakan todo function ketika berencana untuk membuat todo test
+    todo function akan ditampilkan sebagai summaray ketika kita menjalankan unit test
+
+    test.todo("")
+
+failing function => sekanario gagal / expetasi yang gagal
+    contoh misal ketika kita mengirim tidak fvalid, maka kita berharap kalo kodenya error
+
+    tanpa menggunakan matcher
+    
+    menggunakan failing function
+    test.failing("failing", () => )
+
+mock => kode yang melakukan interakssi dengan sistem lain, misal databse, message broker, thrid party web servicec dll
+    jika kita lakukan unit test dengan cara berinteraksi secara langsung
+
+    test pertama success, tes selanjutnya malah gagal
+
+    dalam pemograman, mock object adalah tiruan yang kita buat, yang tingkah lakunya menyerupai dengan object aslinya
+        jadi tidak perlu berhubungan dengan sistem database nya langsung
+
+    jenis:
+    - mock fucntion => membuat tiruan dari sebuah function
+    - mock class, yang kita bisa gunakan untuk membuat tiruan dari object class
+    - mock modules, yang bisa kita gunakan untuk membuat tiruan dari modules
+
+mock fucntion => membuat tiruan dari sebuah function
+    bisa melihat detail dari parameter yang digunakan untuk memanggil sebuah mock function
+
+    test("test calculate", () => {
+    const callback = jest.fn();
+
+    calculate([10, 10, 10], callback);
+    calculate([10, 10, 10, 10, 10], callback);
+    });
+
+mock property => melihat parameter yang digunakan untuk memanggil mock
+    mockFn.mock.calls
+    mockFn.mock.results
+
+mock return value => kita bisa gunakan
+    mockReturnValue(returnValue)
+    mockReturnValueOnce(returnValue)
+
+mock implementation => mengubah return value secara dinamis
+    callback.mockImplementation((total) => {
+        return total * 2;
+    });
+
+mock async fucntion => mengembalikan rsult promise
+    jest.fn().mockResolvedvalue(value)
+    jest.fn().mockRejectedValueOnce(value)
+
+mock mathers => melakukan matchers dengan mudah
+    expect(mock).toHaveBennCalled() => memastikan mock pernah dipanggil
+    expect(mock).toHaveBennCalledTimes(number) => memastikan mock pernah dipanggil sebanyak number
+    expect(mock).toHaveBennCalledWith(arg1, arg2, ...) => memastikan mock pernah dipanggil dengan parameter
+
+mock modules => 

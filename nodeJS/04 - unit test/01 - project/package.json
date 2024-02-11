@@ -16,6 +16,7 @@
     "jest": "^29.7.0"
   },
   "jest": {
+    "maxConcurrency": 3,
     "verbose": true,
     "transform": {
       "^.+\\.[t|j]sx?$": "babel-jest"
@@ -36,3 +37,4 @@
     ]
   }
 }
+
