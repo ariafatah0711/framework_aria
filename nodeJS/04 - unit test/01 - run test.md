@@ -248,4 +248,29 @@ mock mathers => melakukan matchers dengan mudah
     expect(mock).toHaveBennCalledTimes(number) => memastikan mock pernah dipanggil sebanyak number
     expect(mock).toHaveBennCalledWith(arg1, arg2, ...) => memastikan mock pernah dipanggil dengan parameter
 
-mock modules => 
+mock modules => mock terhadap modules
+    databse modules
+
+    melakukan mock modules
+    jest.mock(module) => secara otomatis ketika kita import maka jest tersebut akan melakukan mock
+
+    jest.uunmock() => untuk melepas mock dan memanggil kode aslinya
+
+mock partial modules => mock sebagian modules aja
+    jest.requireActual(module)
+
+    // contoh
+    jest.mock("../src/databse.js", () => {
+    const originalModule = jest.requireActual("../src/databse.js");
+
+        return {
+            __esModule: true,
+            ...originalModule,
+            getAllProducts: jest.fn(),
+        };
+    });
+
+mock class => sama seperti mock function
+
+mock partial class => melakukan mock hanya sebagian function di class saja
+    jest.spyOn()
