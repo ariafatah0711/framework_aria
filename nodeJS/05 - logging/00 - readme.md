@@ -42,4 +42,29 @@ transport => destination atau target yang digunakan untuk mengirim log
 
     console => transport yang digunakan utnuk mengirim data log ke console/stdout
 
-logging level => 
+logging level => informasi seberapa penting log yang kita kirimkan
+    log dimulai dari level paling rendah ke paling tinggi
+
+    winston level
+    - error => errror
+    - warn => peringatan
+    - info => informasi
+    - http => http request
+    - verbose => informasi lebih detail
+    - debug => debugging
+    - silly => test saja
+
+secara default saat kita membuat log, logger hanya menampilkan log dengan level info dan di atasny
+
+jika ingin mengubah level lognya tambahkan di abgian konfigurasi logger
+    const logger = winston.createLogger({
+        level: "debug",
+    })
+
+shorcut function => yang digunakan untuk logging,
+    sehingga kita tidak perlu menggunakan function log dan object dengan attribut level lagi
+
+    logger.info(message)
+    logger.warn(message)
+    dll
+
