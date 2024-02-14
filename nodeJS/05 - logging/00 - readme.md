@@ -68,3 +68,45 @@ shorcut function => yang digunakan untuk logging,
     logger.warn(message)
     dll
 
+format => adalah object yang digunakan untuk melakukan formating ke data log
+    secara default logger menggunakan format json
+
+    json() => json format
+    simple() => format sederhana teks biasa
+    logtash() =>
+
+    printf() => custom format / membuat format sendiri
+
+combine format => kombinasi beberapa format sekaligus
+    ini cocok untuk menambahkan informasi tambahan ke log data
+        misal timestamp, data jarak waktu log
+
+    hanya bisa dipakai di combine jika tidak akan undefined
+        timestamp() => waktu / date
+        ms() => waktu perbedaan
+
+    format: winston.format.combine(
+      winston.format.timestamp(),
+      winston.format.ms(),
+      winston.format.json()
+    ),
+
+file transport => menyimpan data log ke file
+    kita bisa juga menambahkan sekaligus : console dan 
+
+    transports: [
+        new winston.transports.File({
+            filename: "application.log",
+        }),
+    ]
+
+trasnport level => memisahkan beberapa log di level yang berbeda
+    misal untuk info di file info.log
+    di warn di file warn.log
+
+rotate file => daily rotate file agar file tidak terlalu penuh setiap hari
+    dan ini juga berguna untuk menghapus file lama yang sudah tidak terpakai
+
+    harus install package winston-daily-rotate-file 
+    npm install winston-daily-rotate-file
+
