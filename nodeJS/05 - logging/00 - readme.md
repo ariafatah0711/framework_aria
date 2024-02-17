@@ -110,3 +110,30 @@ rotate file => daily rotate file agar file tidak terlalu penuh setiap hari
     harus install package winston-daily-rotate-file 
     npm install winston-daily-rotate-file
 
+membuat transport => mengirim datalog ke databse, chat, email, dll
+    kita bisa mencari di komunitas / secara manual
+
+transport lainya
+    redis transport => databse in memory
+    syslog transport => yang biasa di linux
+    CouchDB transport => database
+    loggy Transport
+    Slack Transport
+    Telegram Trasnport
+
+exceptions => menangkap sebauh execptions(try catch)
+    hal ini berbahaya karena kita tidak bisa melakukan debug exception dengan baik
+        sehingga kita tidak bisa investasi selanjutnya sangat sulit
+    
+    handle exceptions => fitur secara otomatis menangkap exceptions yang belum ter-handle
+
+    new winston.transports.File({
+      handleExceptions: true,
+      filename: "log/exception.log",
+    }),
+
+    error nya akan berpindah ke dalam file exception.log
+    dan ketika di run tidak akan error
+
+rejctions => menghandle promise reject
+    
